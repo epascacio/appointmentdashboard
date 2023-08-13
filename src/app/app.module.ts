@@ -46,7 +46,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, UserListComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

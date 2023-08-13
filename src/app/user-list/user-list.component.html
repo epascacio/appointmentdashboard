@@ -1,1 +1,21 @@
-<p>user-list works!</p>
+<div class="card">
+  <div class="card-header">
+    Users
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <th scope="row">{{ user.firstName }} {{ user.lastName }}</th>
+          <td>{{ user.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
