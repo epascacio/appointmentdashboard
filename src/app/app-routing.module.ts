@@ -10,7 +10,7 @@ import { RegisterComponent } from './views/pages/register/register.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'users',
     pathMatch: 'full'
   },
   {
@@ -26,7 +26,12 @@ const routes: Routes = [
           import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
       {
-        path: 'theme',
+        path: 'users',
+        loadChildren: () =>
+          import('./users/users.module').then((m) => m.UsersModule)
+      },
+      {
+        path: 'users',
         loadChildren: () =>
           import('./views/theme/theme.module').then((m) => m.ThemeModule)
       },
