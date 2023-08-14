@@ -27,6 +27,9 @@ import {
   cilBell,
   cilBold,
   cilBookmark,
+  cilBuilding,
+  cilCalendarCheck,
+  cilApplications,
   cilCalculator,
   cilCalendar,
   cilChart,
@@ -180,6 +183,9 @@ export const iconSubset = {
   cilUserFemale,
   cilUserFollow,
   cilUserUnfollow,
+  cilBuilding,
+  cilApplications,
+  cilCalendarCheck,
 };
 
 export enum IconSubset {

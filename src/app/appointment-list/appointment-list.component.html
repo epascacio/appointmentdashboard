@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+      Appointments
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Booked Date & Time</th>
+            <th>Service</th>
+            <th>Customer</th>
+            <th>Business</th>
+            <!-- Add more headers as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <td>{{ appointment.bookedDateAndTime | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{ appointment.serviceType.name }}</td> <!-- Assuming the service name is in 'name' field -->
+            <td>{{ appointment.customer.firstName }} {{ appointment.customer.lastName }}</td> <!-- Assuming first name and last name for the customer -->
+            <td>{{ appointment.business.name }}</td>
+            <!-- Add more columns as needed -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

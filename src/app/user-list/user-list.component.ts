@@ -18,8 +18,14 @@ export class UserListComponent implements OnInit {
     this.fetchUsers();
   }
 
+  defaultImageUrlBase = 'https://coreui.io/demos/bootstrap/4.2/free/assets/img/avatars/';
+
+  getRandomImageNumber(): number {
+    return Math.floor(Math.random() * 6) + 1; // Generates a random number between 1 and 6
+  }
+
   fetchUsers(): void {
-    const apiUrl = 'https://tasksyncapi-4c8b005350c1.herokuapp.com/user/users';
+    const apiUrl = 'http://localhost:3000/user/users';
 
     this.http.get(apiUrl)
       .pipe(

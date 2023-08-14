@@ -31,6 +31,21 @@ const routes: Routes = [
           import('./users/users.module').then((m) => m.UsersModule)
       },
       {
+        path: 'appointments',
+        loadChildren: () =>
+          import('./appointments/appointments.module').then((m) => m.AppointmentsModule)
+      },
+      {
+        path: 'services',
+        loadChildren: () =>
+          import('./services/services.module').then((m) => m.ServicesModule)
+      },
+      {
+        path: 'businesses',
+        loadChildren: () =>
+          import('./businesses/businesses.module').then((m) => m.BusinessesModule)
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./views/theme/theme.module').then((m) => m.ThemeModule)

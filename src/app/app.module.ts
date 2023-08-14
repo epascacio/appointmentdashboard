@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
 
@@ -38,6 +38,11 @@ import {
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { UserListComponent } from './user-list/user-list.component';
+import { BusinessListComponent } from './business-list/business-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceListComponent } from './service-list/service-list.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { TradeListComponent } from './trade-list/trade-list.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -46,7 +51,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS],
+  declarations: [AppComponent, ...APP_CONTAINERS, TradeListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -73,7 +78,9 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {
