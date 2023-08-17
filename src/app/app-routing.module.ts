@@ -46,6 +46,11 @@ const routes: Routes = [
           import('./businesses/businesses.module').then((m) => m.BusinessesModule)
       },
       {
+        path: 'trades',
+        loadChildren: () =>
+          import('./trades/trades.module').then((m) => m.TradesModule)
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./views/theme/theme.module').then((m) => m.ThemeModule)

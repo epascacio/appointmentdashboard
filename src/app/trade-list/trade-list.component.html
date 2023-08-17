@@ -1,1 +1,25 @@
-<p>trade-list works!</p>
+<div class="card">
+    <div class="card-header">
+      Trades
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Requesting Customer</th>
+            <th>Requested Time Slot</th>
+            <th>Status</th>
+            <!-- Add more headers as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trade of trades">
+            <td>{{ trade.requestingCustomer }}</td>
+            <td>{{ trade.requestedTimeSlot | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{ trade.status }}</td>
+            <!-- Add more columns as needed -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

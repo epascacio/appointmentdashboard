@@ -17,6 +17,25 @@ export class AppointmentListComponent implements OnInit {
     this.fetchAppointments();
   }
 
+  completeAppointment(appointmentId: string) {
+    const apiUrl = `http://localhost:3000/appointment/appointments/${appointmentId}`;
+    
+    const updatedData = {
+      status: 'Completed'
+    };
+
+    this.http.put(apiUrl, updatedData).subscribe(
+      (response) => {
+        console.log('Appointment marked as complete', response);
+        // Refresh the appointments list or perform any other actions
+        this.fetchAppointments();
+      },
+      (error) => {
+        console.error('Error marking appointment as complete', error);
+      }
+    );
+  }
+
   fetchAppointments(): void {
     const apiUrl = 'http://localhost:3000/appointment/appointments';
 

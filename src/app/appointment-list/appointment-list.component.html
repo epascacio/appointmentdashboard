@@ -10,6 +10,8 @@
             <th>Service</th>
             <th>Customer</th>
             <th>Business</th>
+            <th>Status</th>
+            <th>Actions</th>
             <!-- Add more headers as needed -->
           </tr>
         </thead>
@@ -19,6 +21,14 @@
             <td>{{ appointment.serviceType.name }}</td> <!-- Assuming the service name is in 'name' field -->
             <td>{{ appointment.customer.firstName }} {{ appointment.customer.lastName }}</td> <!-- Assuming first name and last name for the customer -->
             <td>{{ appointment.business.name }}</td>
+            <td>{{ appointment.status }}</td>
+            <td><button
+          *ngIf="appointment.status !== 'Completed'"
+          (click)="completeAppointment(appointment._id)"
+          class="btn btn-success"
+        >
+          Mark as Complete
+        </button></td>
             <!-- Add more columns as needed -->
           </tr>
         </tbody>
