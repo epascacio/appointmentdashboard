@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { BusinessListComponent } from '../business-list/business-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -19,6 +20,8 @@ const routes: Routes = [
     BusinessListComponent
   ],
   imports: [
+    FormsModule, 
+    ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
     RouterModule.forChild(routes)
